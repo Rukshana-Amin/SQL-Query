@@ -1,10 +1,10 @@
 # SQL-Query solve: For Database assignment tasks.
 
---1. A database named database_assignment.
+1. A database named database_assignment.
 
 CREATE DATABASE database_assignment;
 
---2. A table named customers.
+2. A table named customers.
 
 CREATE TABLE customers(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,7 +18,7 @@ CREATE TABLE customers(
     Points INT Not Null
 );
 
---3. Insert the customer data.
+3. Insert the customer data.
 
 INSERT INTO customers (First_Name, Last_Name, Date_of_Birth, Phone, Address, City, State, Points) values
 
@@ -31,40 +31,40 @@ INSERT INTO customers (First_Name, Last_Name, Date_of_Birth, Phone, Address, Cit
     
 SELECT * FROM customers; 
 
---4. Show only 2 members whose points are more than 1000.
+4. Show only 2 members whose points are more than 1000.
 
 SELECT First_Name, Last_Name, Points FROM customers WHERE Points>1000 ORDER BY Points DESC LIMIT 2;
 
---5. The customers whose age is in 1980 to 1990 or points less than 1000.
+5. The customers whose age is in 1980 to 1990 or points less than 1000.
 
 SELECT * FROM customers WHERE Points<1000;
 
 SELECT * FROM customers WHERE Date_of_Birth BETWEEN '1980-01-01' AND '1990-12-31';
 
---6. Order the customers by points in ascending order.
+6. Order the customers by points in ascending order.
 
 SELECT * FROM customers ORDER BY Points ASC;
 
---7. Find the customer whose name contains 'burgh' using Regular Expression.
+7. Find the customer whose name contains 'burgh' using Regular Expression.
 
 SELECT * FROM customers WHERE First_Name REGEXP 'burgh';
 SELECT * FROM customers WHERE Last_Name REGEXP 'burgh';
 
---8. Find the customer who does not have phone number.
+8. Find the customer who does not have phone number.
 
 SELECT First_Name, Last_Name FROM customers WHERE Phone LIKE '';
 
---9. Changing the 'Date of Birth' column name into 'dob'.
+9. Changing the 'Date of Birth' column name into 'dob'.
 
 ALTER TABLE customers
 RENAME COLUMN Date_of_Birth TO dob;
 
---10. Find the max point holder customer name.
+10. Find the max point holder customer name.
 
 SELECT First_Name,Last_Name,MAX(Points) FROM customers;
 
 
---11. Execute a query for the following scenario.
+11. Execute a query for the following scenario.
   --If customers have points less than 1000, they are bronze member.
   --If customers have points more than 1000 and less than 2000, they are silver member.
   --If customers have points more than 2000 and less than 3000, they are gold member.
